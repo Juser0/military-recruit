@@ -1,6 +1,7 @@
 package com.military.recruit.config
 
-import com.military.recruit.remote.receipt.ReceiptClient
+import com.military.recruit.config.env.OpenAPIEnv
+import com.military.recruit.remote.ReceiptClient
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.client.RestClient
@@ -14,13 +15,12 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory
  * @author Juwon Lee
  */
 @Configuration
-class RestClientConfig {
+class RestClientConfig(private val openAPIEnv: OpenAPIEnv) {
 
     @Bean
     fun militaryClient(): ReceiptClient {
         val restClient: RestClient = RestClient.builder()
-            .baseUrl("https://www.naver.com")
-            .defaultHeader("X-AUTH-KEY", "default")
+            .baseUrl(openAPIEnv.baseurl)
             .build()
         val adapter: RestClientAdapter = RestClientAdapter.create(restClient)
         val factory: HttpServiceProxyFactory = HttpServiceProxyFactory.builderFor(adapter).build()

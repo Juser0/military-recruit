@@ -1,7 +1,10 @@
 package com.military.recruit.feature.receipt.controller
 
-import org.springframework.stereotype.Controller
+import com.military.recruit.remote.ReceiptClient
+import org.springframework.web.bind.annotation.RestController
 
-@Controller
-class ReceiptController {
+@RestController
+class ReceiptController(private val receiptClient: ReceiptClient) {
+    fun getInfo() {
+    }
 }

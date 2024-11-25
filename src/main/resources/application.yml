@@ -1,5 +1,6 @@
-apikey:
-  register: keyValue
+openapi:
+  baseurl: baseurl
+  key: keyValue
 
 logging:
   level:
