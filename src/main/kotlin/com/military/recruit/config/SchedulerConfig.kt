@@ -6,6 +6,12 @@ import org.springframework.scheduling.annotation.SchedulingConfigurer
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler
 import org.springframework.scheduling.config.ScheduledTaskRegistrar
 
+/**
+ * Scheduler configuration
+ * 스케줄러 설정
+ *
+ * @constructor Create empty Scheduler config
+ */
 @Configuration
 @EnableScheduling
 class SchedulerConfig : SchedulingConfigurer {

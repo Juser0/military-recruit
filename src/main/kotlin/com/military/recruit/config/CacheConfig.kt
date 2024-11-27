@@ -9,6 +9,12 @@ import org.springframework.cache.caffeine.CaffeineCacheManager
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
+/**
+ * Cache configuration
+ * In-Memory Cache (Caffeine) 설정
+ *
+ * @author Juwon Lee
+ */
 @EnableCaching
 @Configuration
 class CacheConfig {

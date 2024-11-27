@@ -5,6 +5,13 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 
+/**
+ * Receipt controller
+ * 모집 현황 View Controller
+ * - 현재는 공군만 지원
+ *
+ * @author Juwon Lee
+ */
 @Controller
 class ReceiptController(
     private val receiptService: ReceiptService
