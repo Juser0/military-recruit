@@ -28,7 +28,7 @@ jobs:
         id: repo_name_casing
         uses: ASzc/change-string-case-action@v1
         with:
-          string: ${{ github.repository }}
+          string: ${{ github.repository }} | awk -F'/' '{print $2}'
 
       - name: image name
         run: echo "imagename=${{ secrets.DOCKER_USERNAME }}/${{ steps.repo_name_casing.outputs.lowercase }}" >> $GITHUB_ENV
