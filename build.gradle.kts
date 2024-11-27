@@ -53,17 +53,6 @@ kotlin {
 	}
 }
 
-tasks {
-	bootJar {
-		layered
-	}
-
-	bootBuildImage {
-		environment.put("BP_JVM_TYPE", "jre")
-		environment.put("BP_JVM_VERSION", "21")
-	}
-}
-
 tasks.withType<Test> {
 	useJUnitPlatform()
 }

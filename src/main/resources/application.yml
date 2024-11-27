@@ -1,7 +1,3 @@
 openapi:
   baseurl: ${baseurl}
   key: ${key}
-
-logging:
-  level:
-    root: INFO
