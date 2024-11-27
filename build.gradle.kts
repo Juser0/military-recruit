@@ -62,9 +62,8 @@ tasks {
 	}
 
 	bootBuildImage {
-		builder.set("paketo-buildpacks/builder:tiny")
 		environment.put("BP_JVM_TYPE", "jre")
-		buildpacks.set(listOf("paketo-buildpacks/java", "paketo-buildpacks/spring-boot"))
+		environment.put("BP_JVM_VERSION", "21")
 	}
 }
 
