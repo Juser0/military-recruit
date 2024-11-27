@@ -29,10 +29,18 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-cache")
 	implementation ("com.github.ben-manes.caffeine:caffeine")
 
+	// XML
+	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 	// Swagger UI
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 
 	// Default Dependencies
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	// Common Dependencies
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 

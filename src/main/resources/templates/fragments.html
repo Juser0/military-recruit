@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fragments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+<div th:fragment="receiptTable(receipts)">
+    <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+            <tr class="bg-gray-200 uppercase text-sm leading-normal">
+                <th class="py-3 px-6 text-center border border-gray-300">#</th>
+                <th class="py-3 px-6 text-center border border-gray-300">년도</th>
+                <th class="py-3 px-6 text-center border border-gray-300">차수</th>
+                <th class="py-3 px-6 text-center border border-gray-300">특기코드</th>
+                <th class="py-3 px-6 text-center border border-gray-300">특기명</th>
+                <th class="py-3 px-6 text-center border border-gray-300">입영부대</th>
+                <th class="py-3 px-6 text-center border border-gray-300">선발인원</th>
+                <th class="py-3 px-6 text-center border border-gray-300">접수인원</th>
+                <th class="py-3 px-6 text-center border border-gray-300">과부족</th>
+                <th class="py-3 px-6 text-center border border-gray-300">경쟁률</th>
+                <th class="py-3 px-6 text-center border border-gray-300">접수 시작</th>
+                <th class="py-3 px-6 text-center border border-gray-300">접수 종료</th>
+                <th class="py-3 px-6 text-center border border-gray-300">입영년월</th>
+            </tr>
+        </thead>
+        <tbody class="text-sm font-light">
+            <tr th:each="receipt, stat : ${receipts}">
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${stat.index + 1}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.year}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.times}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.code}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.codeName}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.enlistLocation}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.selectCnt}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.registerCnt}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.extremes}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300 font-extrabold" th:text="${receipt.rate} + ':1'"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.startTime}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.endTime}"></td>
+                <td class="py-3 px-6 text-center border border-gray-300" th:text="${receipt.enlistDate}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

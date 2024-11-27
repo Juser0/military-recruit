@@ -1,6 +1,6 @@
 package com.military.recruit.config
 
-import com.military.recruit.common.base.log
+import com.military.recruit.common.extension.log
 import com.military.recruit.config.env.CacheEnv
 import org.springframework.cache.CacheManager
 import org.springframework.cache.annotation.EnableCaching

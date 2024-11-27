@@ -1,4 +1,4 @@
-package com.military.recruit.common.base
+package com.military.recruit.common.extension
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

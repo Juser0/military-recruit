@@ -1,6 +1,6 @@
 openapi:
-  baseurl: baseurl
-  key: keyValue
+  baseurl: ${baseurl}
+  key: ${key}
 
 logging:
   level:
