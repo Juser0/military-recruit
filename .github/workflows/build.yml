@@ -31,7 +31,7 @@ jobs:
           string: ${{ github.repository }}
 
       - name: image name
-        run: echo "imagename=${{ secrets/DOCKER_USERNAME }}/${{ steps.repo_name_casing.outputs.lowercase }}" >> $GITHUB_ENV
+        run: echo "imagename=${{ secrets.DOCKER_USERNAME }}/${{ steps.repo_name_casing.outputs.lowercase }}" >> $GITHUB_ENV
 
       - name: Docker login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ github.DOCKER_USERNAME }}" --password-stdin
