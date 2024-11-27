@@ -5,8 +5,3 @@ openapi:
 logging:
   level:
     root: INFO
-
-springdoc:
-  swagger-ui:
-    path: /docs
-    operations-sorter: method
