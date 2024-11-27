@@ -1,3 +1,6 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
@@ -33,9 +36,6 @@ dependencies {
 	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-	// Swagger UI
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
-
 	// Default Dependencies
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -53,6 +53,18 @@ dependencies {
 kotlin {
 	compilerOptions {
 		freeCompilerArgs.addAll("-Xjsr305=strict")
+	}
+}
+
+tasks {
+	bootJar {
+		layered
+	}
+
+	bootBuildImage {
+		builder.set("paketo-buildpacks/builder:tiny")
+		environment.put("BP_JVM_TYPE", "jre")
+		buildpacks.set(listOf("paketo-buildpacks/java", "paketo-buildpacks/spring-boot"))
 	}
 }
 
