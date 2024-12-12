@@ -6,11 +6,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="p-3">
-<h1 class="text-2xl font-bold">공군 866기 모집 (24.11.28 ~ 24.12.03)</h1>
+<h1 class="text-2xl font-bold">해군 모집 (24.11.28 ~ 24.12.03)</h1>
 <h2 class="text-xl">일반/전문기술병</h2>
-    <div th:insert="~{fragments :: receiptTable(${general})}"></div>
+<div th:insert="~{fragments :: receiptTable(${general})}"></div>
 <h2 class="text-xl">전문특기병</h2>
-    <div th:insert="~{fragments :: receiptTable(${expert})}"></div>
+<div th:insert="~{fragments :: receiptTable(${expert})}"></div>
 <h3 th:text="'마지막 업데이트 시간: ' + ${updatedAt}"></h3>
 </body>
 </html>

@@ -23,7 +23,8 @@ class ScheduleService(private val receiptService: ReceiptService) {
     @Scheduled(cron = "0/10 * * * * *")
     fun updateReceiptInfo() {
         log.info("[START] 현재 지원 현황 업데이트 시작 | time = ${LocalDateTime.now()}")
-        receiptService.getAirForceRecruit()
+        receiptService.updateReceipts()
         log.info("[END] 현재 지원 현황 업데이트 완료 | time = ${LocalDateTime.now()}")
     }
+
 }

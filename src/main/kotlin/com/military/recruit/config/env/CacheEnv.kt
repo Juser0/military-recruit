@@ -19,7 +19,8 @@ enum class CacheEnv(
         ARMY("army", 30, 1000),
         NAVY("navy", 30, 10000),
         MARINE_CORPS("marineCorps", 30, 10000),
-        AIR_FORCE("airForce", 30, 10000);
+        AIR_FORCE("airForce", 30, 10000),
+        UPDATED_AT("updatedAt", 30, 10000);
 
         fun caffeineSpec(): Caffeine<Any, Any> {
             return Caffeine.newBuilder()

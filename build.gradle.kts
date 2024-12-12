@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
@@ -29,13 +31,14 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-cache")
 	implementation ("com.github.ben-manes.caffeine:caffeine")
 
+//	// Spring Data JDBC
+//	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+//
+//	// PostgreSQL
+//	runtimeOnly("org.postgresql:postgresql")
+
 	// XML
 	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-
-	// Default Dependencies
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
 
 	// Common Dependencies
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -51,6 +54,10 @@ kotlin {
 	compilerOptions {
 		freeCompilerArgs.addAll("-Xjsr305=strict")
 	}
+}
+
+tasks.withType<BootJar> {
+	layered
 }
 
 tasks.withType<Test> {
